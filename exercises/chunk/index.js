@@ -95,6 +95,23 @@ function chunk(array,size){
 */
 
 //// ALTERNATE SOLUTION //////
+function chunk(array,size){
+   //using the array.slice method
+   //chunk.slize(0,3); takes a COPY from [0,3) of the array
+
+   //this one is probably better on the whole, less edge cases
+   //but is not something you'd easily come up with on your own
+   const chunked = [];
+   let index = 0;
+   while(index < array.length)
+   {
+      chunked.push(array.slice(index,index + size));
+      index += size;
+   }
+   return chunked;
+}
+
+
 
 module.exports = chunk;
 
