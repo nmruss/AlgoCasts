@@ -12,6 +12,20 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+   for(let v=1;v<=n;v++){
+      //is v a multiple of 3 and 5?
+      //any number that is a multiple of both 3 and 5 will also be a mutliple of 15
+      //3 * 5 = 15
+      if(v % 15 == 0)
+         console.log("fizzbuzz");
+      else if(v % 5 == 0)
+         console.log("buzz");
+      else if(v % 3 == 0)
+         console.log("fizz");
+      else
+         console.log(v);
+   }
+}
 
 module.exports = fizzBuzz;
