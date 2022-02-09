@@ -1,0 +1,4 @@
+//RECURSION TIPS
+
+-Find bare minimum pieces of information
+-Find a base case FIRST
