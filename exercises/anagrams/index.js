@@ -7,7 +7,9 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
-
+//
+//Charmap Solution
+/*
 function anagrams(stringA, stringB) {
    let aMap = {};
    let bMap = {};
@@ -19,7 +21,6 @@ function anagrams(stringA, stringB) {
    function makeMap(string){
       let map = {};
       for(let c of string){
-         //if letter only (maybe a better way to do this?)
          if(map[c])
             map[c]++;
          else
@@ -36,19 +37,38 @@ function anagrams(stringA, stringB) {
    let bMapLength = Object.keys(bMap).length; 
 
    if(aMapLength !== bMapLength){
-      debugger;
       return false;
    } else {
-      debugger;
       for(key in aMap){
-         debugger;
          if(aMap[key] !== bMap[key]){
             return false;
          }
       }
-      return true;
    }
 
+   return true;
+
+}
+*/
+
+function makeCharMap(str){
+   let charMap = {};
+   for(let c of str){
+      if(charMap[c])
+         charMap[c]++;
+      else charMap[c] = 1;
+   }
+   return charMap;
+}
+
+//sorting and comparison solution
+function anagrams(stringA, stringB){
+   return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str){
+   //cleaning and sorting the string
+   return str.replace(/[^\w]/g,"").toLowerCase().split('').sort().join();
 }
 
 module.exports = anagrams;
