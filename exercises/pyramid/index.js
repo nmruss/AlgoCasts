@@ -37,8 +37,82 @@ function pyramid(n) {
       numSpaces--;
    }
 
-}*/
+}
 
+//iterative solution
+function pyramid(n) {
+   let numSpaces = n - 1;
+   let size = (2*n) - 1;
+   for(let row=0;row<n;row++){
+      let str = "";
+      for (let col=0;col< size;col++){
+         if(col < numSpaces)
+            str+=' ';
+         else if(col >= (size-numSpaces))
+            str+= ' ';
+         else
+            str+='#';
+
+      }
+      numSpaces--;
+      console.log(str);
+   }
+}
+*/
+
+/*
+function pyramid(n,row = 0,col = 0,numChars = 1, numSpaces = (n-1),str = ""){
+   let size = ((2*n)-1);
+   
+   //end of row
+   if(col === size){
+      console.log(str);
+      //if you just printed all chars
+      if(numChars === size)
+         return;
+      else
+         return pyramid(n,row+1,0,numChars + 2,numSpaces-1);
+   }
+   
+   //going through columns
+   if(col < numSpaces)
+      str+= ' ';
+   else if (col >= (size-numSpaces))
+      str+= ' ';
+   else
+      str+='#';
+
+   return pyramid(n,row,col+1,numChars,numSpaces,str);
+}
+*/
+
+function pyramid(n,row=0,col=0,str=""){
+   let mid = Math.floor((2*n - 1) / 2);
+   let size = (2*n) - 1;
+
+   //end of row
+   if(col === size){
+      //end of pyramid
+      if(row === n)
+         return;
+      else{
+         console.log(str);
+         return pyramid(n,row+1,0);
+      }
+   }
+
+   if(mid - row <= col && mid + row >= col){
+      str+= '#';
+   } else {
+      str+= ' ';
+   }
+
+   return pyramid(n,row,col+1,str);
+}
+
+pyramid(4);
+
+/*
 function pyramid(n,numChars = 1, numSpaces = (n - 1)){
    let c = '#';
    let s = ' ';
@@ -52,7 +126,7 @@ function pyramid(n,numChars = 1, numSpaces = (n - 1)){
    return pyramid(n,numChars+2,numSpaces-1);
    
 }
-
+*/
 //base case will be when numChars === 2n - 1;
 //otherwise recurse through and keep adding to numchars and numspaces
 
