@@ -26,4 +26,22 @@ function vowels(str) {
    return result ? result.length : 0;
 }
 
+
+/*
+
+//includes method
+function vowels(str){
+   let count = 0;
+   //const checker = "aeiou";
+   const checker = ['a','e','i','o','u'];
+   for (let c of str.toLowerCase()){
+      //strings and arrays both have this 'includes' method
+      //array might be a clearer choice here
+      if(checker.includes(c))
+         count++;
+   }
+   return count;
+}
+*/
+
 module.exports = vowels;
