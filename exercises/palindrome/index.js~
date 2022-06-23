@@ -26,7 +26,6 @@ function palindrome(str){
 }
 */
 
-//making use of advanced array helper 'every'
 function palindrome(str){
    let i = 0;
    return str.split('').every((val,i)=>{
