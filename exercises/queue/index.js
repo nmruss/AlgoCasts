@@ -8,6 +8,22 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+//in javascript all you need to do is just remove and add elements from an array
+class Queue {
+   constructor(d){
+      this.data = d ? d : [];
+   }
+
+   //unshift for adding
+   add(e){
+      this.data.unshift(e);   
+   };
+   
+   //pop for removing and return the removed value
+   remove(){
+      return this.data.pop();
+   }
+}
+
 
 module.exports = Queue;
