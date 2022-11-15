@@ -8,7 +8,6 @@
 // Example:
 //   fib(4) === 3
 
-<<<<<<< HEAD
 //iterative
 //O(n) runtime complexity
 /*
@@ -27,40 +26,31 @@ function fib(n) {
 //
 //memorize this solution! its a good example of a problem
 //that would be nearly impossible to solve on your own
-function fib(n){
-   //base case
-   if(n < 2)
-      return n;
-   //recursive case
-   return fib(n - 1) + fib(n - 2);
+function fib(n) {
+  //base case
+  if (n < 2) return n;
+  //recursive case
+  return fib(n - 1) + fib(n - 2);
 }
 
 //accepts a function and returns the memoized versions
 //a generic memoization function is a great tool to have
 //for improving the speed of many algorithms
-function memoize(fn){
-   const cache = {};
-   //using the spread operator
-   return function(...args){
-      if(cache[args]){
-         return cache[args];
-      }
+function memoize(fn) {
+  const cache = {};
+  //using the spread operator
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
 
-      //using apply to keep our args within context
-      const result = fn.apply(this,args);
-      cache[args] = result;
-      return result;
-   };
+    //using apply to keep our args within context
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  };
 }
 
 fib = memoize(fib);
-=======
-function fib(n) {
-
-   if (n < 2)
-      return n;
-   else return fib(n-1) + fib(n-2);
-}
->>>>>>> 96477b4d937dcd1756e2f897b14aad392391c4a6
 
 module.exports = fib;
