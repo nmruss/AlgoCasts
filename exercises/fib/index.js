@@ -8,6 +8,7 @@
 // Example:
 //   fib(4) === 3
 
+<<<<<<< HEAD
 //iterative
 //O(n) runtime complexity
 /*
@@ -53,5 +54,13 @@ function memoize(fn){
 }
 
 fib = memoize(fib);
+=======
+function fib(n) {
+
+   if (n < 2)
+      return n;
+   else return fib(n-1) + fib(n-2);
+}
+>>>>>>> 96477b4d937dcd1756e2f897b14aad392391c4a6
 
 module.exports = fib;
