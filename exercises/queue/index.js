@@ -8,6 +8,8 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
+//implementing an ES6 Queue in js is as easy as taking a subset 
+//of array functionality and mapping it to .add() and .remove()
 class Queue {
    constructor(){
       this.data = [];
@@ -15,6 +17,7 @@ class Queue {
 
    add(record){
       //unshift will add to the FRONT of the array
+      //very important that .add() adds records to the front of the object
       this.data.unshift(record);
    }
 
