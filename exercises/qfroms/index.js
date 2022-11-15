@@ -18,12 +18,10 @@ class Queue {
   constructor() {
     this.s1 = new Stack();
     this.s2 = new Stack();
-    this.len = 0;
   }
 
   add(d) {
     this.s1.push(d);
-    this.len += 1;
   }
 
   //think of this like a slinky
