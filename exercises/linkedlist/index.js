@@ -95,6 +95,21 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+
+  getAt(int) {
+    if (this.size() < int) {
+      return null;
+    }
+
+    let i = 0;
+    let node = this.head;
+    while (i < int) {
+      node = node.next;
+      i++;
+    }
+
+    return node;
+  }
 }
 
 module.exports = { Node, LinkedList };
