@@ -97,12 +97,13 @@ class LinkedList {
   }
 
   getAt(int) {
-    if (this.size() < int) {
+    if (this.size() < int || !this.head) {
       return null;
     }
 
     let i = 0;
     let node = this.head;
+
     while (i < int) {
       node = node.next;
       i++;
