@@ -113,26 +113,19 @@ class LinkedList {
   }
 
   removeAt(int) {
+    //check edge cases
     if (this.size() < int || !this.head) return null;
     if (!this.getAt(int)) return null;
 
+    //remove first node
     if (int === 0) {
       this.head = this.head.next;
       return;
     }
 
-    //starting at 1, setting the appropriate vars
-    let i = 1;
-    let node = this.head.next;
-    let previous = this.head;
-
-    while (i < int) {
-      node = node.next;
-      previous = previous.next;
-      i++;
-    }
-
-    previous.next = node.next;
+    const previous = this.getAt(int - 1);
+    previous.next = this.getAt(int + 1);
+    //could also be previous.next.next
     return;
   }
 }
