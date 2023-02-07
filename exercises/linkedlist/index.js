@@ -15,6 +15,7 @@ class LinkedList {
   }
 
   insertFirst(data) {
+    //keep in mind, this could be replaced by the more generic this.insertFirst(data,0);
     this.head = new Node(data, this.head);
   }
 
@@ -127,6 +128,47 @@ class LinkedList {
     previous.next = this.getAt(int + 1);
     //could also be previous.next.next
     return;
+  }
+
+  insertAt(data, int) {
+    //out of bounds
+
+    //empty list
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+
+    //first element
+    if (int === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+    //else
+
+    //get the previous node, or the last node if out of bounds
+    let prev = this.getAt(int - 1) || this.getLast();
+
+    //create new node with the prev.next value as its own next
+    let node = new Node(data, prev.next);
+
+    //assign the prev node its 'new' next
+    prev.next = node;
+
+    //create node from data
+    //find node one before insert point (prev)
+    //assign created node.next to prev.next
+    //assign prev.next the new node
+  }
+
+  forEach(f) {
+    //will iterate through each node on the chain and run a function on that node
+    var i = 0;
+    while (i < this.size()) {
+      f(this.getAt(i));
+      i++;
+    }
+    return this.data;
   }
 }
 
