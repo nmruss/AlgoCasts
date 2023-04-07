@@ -8,43 +8,23 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-<<<<<<< HEAD
-//in javascript all you need to do is just remove and add elements from an array
-class Queue {
-   constructor(d){
-      this.data = d ? d : [];
-   }
-
-   //unshift for adding
-   add(e){
-      this.data.unshift(e);   
-   };
-   
-   //pop for removing and return the removed value
-   remove(){
-      return this.data.pop();
-   }
-}
-
-=======
-//implementing an ES6 Queue in js is as easy as taking a subset 
+//implementing an ES6 Queue in js is as easy as taking a subset
 //of array functionality and mapping it to .add() and .remove()
 class Queue {
-   constructor(){
-      this.data = [];
-   }
+  constructor() {
+    this.data = [];
+  }
 
-   add(record){
-      //unshift will add to the FRONT of the array
-      //very important that .add() adds records to the front of the object
-      this.data.unshift(record);
-   }
+  add(record) {
+    //unshift will add to the FRONT of the array
+    //very important that .add() adds records to the front of the object
+    this.data.unshift(record);
+  }
 
-   remove(){
-      //using pop method on an array removes and returns the last element
-      return this.data.pop();
-   }
+  remove() {
+    //using pop method on an array removes and returns the last element
+    return this.data.pop();
+  }
 }
->>>>>>> 96477b4d937dcd1756e2f897b14aad392391c4a6
 
 module.exports = Queue;
