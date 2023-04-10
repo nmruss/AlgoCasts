@@ -12,6 +12,20 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+  let slow = list.head;
+  let fast = list.head;
+
+  //is this true because eventually, no matter what, these will
+  //equal the same value in any circular list?
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (fast === slow) return true;
+  }
+
+  return false;
+}
 
 module.exports = circular;
